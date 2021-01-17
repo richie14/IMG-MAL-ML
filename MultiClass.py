@@ -1,9 +1,14 @@
 # import pandas
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from xgboost import XGBClassifier
+from sklearn.metrics import roc_auc_score
+from sklearn import preprocessing
+import numpy as np
+
 
 # read the dataset
-df = pd.read_csv('sample2.csv')
-
+df = pd.read_csv('sample3.csv')
 df.head()
 
 
@@ -24,13 +29,8 @@ Y = df.Label
 #print(X.shape)
 #print(Y.shape)
 
-
-from sklearn.model_selection import train_test_split
-
 # Split into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=42)
-
-from xgboost import XGBClassifier
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.10, random_state=42)
 
 # Create a classifier
 xgb = XGBClassifier(booster='gbtree', objective='multi:softprob', use_label_encoder=False, random_state=42, eval_metric="auc", num_class=num_of_classes)
@@ -38,10 +38,6 @@ xgb = XGBClassifier(booster='gbtree', objective='multi:softprob', use_label_enco
 # Fit the classifier with the training data
 xgb.fit(X_train,y_train)
 
-
-
-from sklearn.metrics import roc_auc_score
-from sklearn import preprocessing
 
 # Use trained model to predict output of test dataset
 val = xgb.predict(X_test)
@@ -60,3 +56,21 @@ output = pd.DataFrame()
 output['Expected Output'] = y_test
 output['Predicted Output'] = val
 output.head()
+
+
+
+
+
+
+new_input = pd.read_csv('test.csv')
+#print("Testing Data:")
+#print(new_input)
+
+# get prediction for new input
+new_output = xgb.predict((np.array(new_input)))
+
+# summarize input and output
+print("Final Prediction:")
+print(new_output)
+
+
