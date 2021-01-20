@@ -1,0 +1,103 @@
+
+Understanding the Dataset
+
+The dataset is a Microsoft Excel file with .csv extension and the filename is static_analysis.csv.The dataset contains 1022 instances of electrical impedance measurements of freshly excised tissue from the breast. There are 9 features for this dataset and 1 class attribute. Each breast tissue belongs to one of six classes.
+The data tab consists of the data that we need. We can go ahead and create a new CSV file with the data tab only.
+
+
+pandas:
+pandas is a Python package that provides fast, flexible, and expressive data structures designed to make working with structured (tabular, multidimensional, potentially heterogeneous) and time series data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language
+
+numpy:
+Numpy is a general-purpose array-processing package. It provides a high-performance multidimensional array object, and tools for working with these arrays. It is the fundamental package for scientific computing with Python.
+Besides its obvious scientific uses, Numpy can also be used as an efficient multi-dimensional container of generic data.
+It provides:
+a powerful N-dimensional array object
+sophisticated (broadcasting) functions
+tools for integrating C/C++ and Fortran code
+useful linear algebra, Fourier transform, and random number capabilities
+and much more
+Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases
+
+
+sklearn:
+Scikit-learn (formerly scikits.learn and also known as sklearn) is a machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.Scikit-learn is largely written in Python, and uses numpy extensively for high-performance linear algebra and array operations. Furthermore, some core algorithms are written in Cython to improve performance. Support vector machines are implemented by a Cython wrapper around LIBSVM; logistic regression and linear support vector machines by a similar wrapper around LIBLINEAR. In such cases, extending these methods with Python may not be possible.Scikit-learn integrates well with many other Python libraries, such as matplotlib and plotly for plotting, numpy for array vectorization, pandas dataframes, scipy, and many more.
+
+metrics:
+The sklearn.metrics module implements functions assessing prediction error for specific purposes. These metrics are detailed in sections on Classification metrics, Multilabel ranking metrics, Regression metrics and Clustering metrics.
+
+train_test_split:
+The train_test_split function is for splitting a single dataset for two different purposes: training and testing. The testing subset is for building your model. The testing subset is for using the model on unknown data to evaluate the performance of the model.
+X, y. The first parameter is the dataset you're selecting to use.
+train_size. This parameter sets the size of the training dataset. There are three options: None, which is the default, Int, which requires the exact number of samples, and float, which ranges from 0.1 to 1.0.
+test_size. This parameter specifies the size of the testing dataset. The default state suits the training size. It will be set to 0.25 if the training size is set to default.
+
+
+gradientboosting:
+Gradient boosting is a powerful ensemble machine learning algorithm.It’s popular for structured predictive modeling problems, such as classification and regression on tabular data, and is often the main algorithm or one of the main algorithms used in winning solutions to machine learning competitions, like those on Kaggle.There are many implementations of gradient boosting available, including standard implementations in SciPy and efficient third-party libraries. Each uses a different interface and even different names for the algorithm.
+
+accuracy:
+Accuracy is defined as the percentage of correct predictions for the test data. It can be calculated easily by dividing the number of correct predictions by the number of total predictions.
+
+
+confusion matrix:
+A Confusion matrix is an N x N matrix used for evaluating the performance of a classification model, where N is the number of target classes. The matrix compares the actual target values with those predicted by the machine learning model. This gives us a holistic view of how well our classification model is performing and what kinds of errors it is making.
+
+
+precision:
+Precision tells us how many of the correctly predicted cases actually turned out to be positive. Precision is a useful metric in cases where False Positive is a higher concern than False Negatives.
+
+recall:
+Recall tells us how many of the actual positive cases we were able to predict correctly with our model. Recall is a useful metric in cases where False Negative trumps False Positive.
+
+f1-score:
+F1-score is a harmonic mean of Precision and Recall, and so it gives a combined idea about these two metrics. It is maximum when Precision is equal to Recall.
+The interpretability of the F1-score is poor. This means that we don’t know what our classifier is maximizing – precision or recall? So, we use it in combination with other evaluation metrics which gives us a complete picture of the result.
+
+
+Random forest is a supervised learning algorithm. The "forest" it builds, is an ensemble of decision trees, usually trained with the “bagging” method. The general idea of the bagging method is that a combination of learning models increases the overall result.Put simply: random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.One big advantage of random forest is that it can be used for both classification and regression problems, which form the majority of current machine learning systems.Below you can see how a random forest would look like with two trees:
+
+
+
+A binary tree is a data structure in which every node or vertex has atmost two children. In Python, a binary tree can be represented in different ways with different data structures(dictionary, list) and class representation for a node. However, binarytree library helps to directly implement a binary tree. It also supports heap and binary search tree(BST)
+ binary tree is a tree in which every node has at most degree two. Conventionally, a descendant of an internal node in a binary tree is called the left child or the right child of the respective internal node (the names are obvious if you think of the graphical representation of a tree). A node of degree two must have one of each. In most cases, a child node will be identified as a left child or right child even if it is the only child of its parent.
+
+
+XGBoost is a popular implementation of Gradient Boosting because of its speed and performance.
+
+Internally, XGBoost models represent all problems as a regression predictive modeling problem that only takes numerical values as input. If your data is in a different form, it must be prepared into the expected format.
+
+
+Naïve Bayes algorithm is a supervised learning algorithm, which is based on Bayes theorem and used for solving classification problems.
+It is mainly used in text classification that includes a high-dimensional training dataset.
+Naïve Bayes Classifier is one of the simple and most effective Classification algorithms which helps in building the fast machine learning models that can make quick predictions.
+It is a probabilistic classifier, which means it predicts on the basis of the probability of an object.
+Some popular examples of Naïve Bayes Algorithm are spam filtration, Sentimental analysis, and classifying articles.
+
+
+
+
+
+K-Nearest Neighbour is one of the simplest Machine Learning algorithms based on Supervised Learning technique.
+K-NN algorithm assumes the similarity between the new case/data and available cases and put the new case into the category that is most similar to the available categories.
+K-NN algorithm stores all the available data and classifies a new data point based on the similarity. This means when new data appears then it can be easily classified into a well suite category by using K- NN algorithm.
+K-NN algorithm can be used for Regression as well as for Classification but mostly it is used for the Classification problems.
+
+
+
+
+
+VMs are classification algorithms used to assign data to various classes.
+They involve detecting hyperplanes which segregate data into classes.
+SVMs are very versatile and are also capable of performing linear or nonlinear classification, regression, and outlier detection.
+Once ideal hyperplanes are discovered, new data points can be easily classified.he optimization objective is to find “maximum margin hyperplane” that is farthest from the closest points in the two classes (these points are called support vectors).
+In the given figure, the middle line represents the hyperplane.
+
+
+NeuralNetwork is a computational learning system that uses a network of functions to understand and translate a data input of one form into a desired output, usually in another form. The concept of the artificial neural network was inspired by human biology and the way neurons of the human brain function together to understand inputs from human senses. 
+
+Neural networks are just one of many tools and approaches used in machine learning algorithms. The neural network itself may be used as a piece in many different machine learning algorithms to process complex data inputs into a space that computers can understand. 
+
+Neural networks are being applied to many real-life problems today, including speech and image recognition, spam email filtering, finance, and medical diagnosis, to name a few. 
+
+
